@@ -19,8 +19,8 @@ public class LRCLibProvider implements ILrcProvider {
 
     @Override
     public LyricResult getLyric(MediaMetadata data) throws IOException {
-        String artist = MediaMetadata.METADATA_KEY_ARTIST;
-        String album = MediaMetadata.METADATA_KEY_ALBUM;
+        String artist = data.getString(MediaMetadata.METADATA_KEY_ARTIST);
+        String album = data.getString(MediaMetadata.METADATA_KEY_ALBUM);
         String searchUrl = String.format(
                 Locale.getDefault(),
                 LRCLIB_SEARCH_URL_FORMAT,
